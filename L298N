@@ -1,0 +1,41 @@
+int Boton_Izquierda = 2;
+int Boton_Derecha = 3;
+int Motor_1_Izquierda = 4;
+int Motor_1_Derecha = 5;
+int Valor_Izquierda=0;
+int Valor_Derecha=0;
+void setup() 
+{                
+  // initialize the digital pin as an output.
+  pinMode(Boton_Izquierda, INPUT);   
+  pinMode(Boton_Derecha, INPUT);   
+  pinMode(Motor_1_Izquierda, OUTPUT);  
+  pinMode(Motor_1_Derecha, OUTPUT);  
+  digitalWrite(Motor_1_Derecha, LOW);
+  digitalWrite(Motor_1_Izquierda, LOW); 
+}
+
+void loop() 
+{
+  
+  
+  Valor_Derecha=digitalRead(Boton_Derecha);
+  Valor_Izquierda=digitalRead(Boton_Izquierda);  
+  
+  if(Valor_Derecha==HIGH)
+  {
+  digitalWrite(Motor_1_Derecha, HIGH);              
+  }
+  else
+  {
+   digitalWrite(Motor_1_Derecha, LOW); 
+  }
+  if(Valor_Izquierda==HIGH)
+  {
+  digitalWrite(Motor_1_Izquierda, HIGH);              
+  }
+  else
+  {
+    digitalWrite(Motor_1_Izquierda, LOW);
+  }
+}
